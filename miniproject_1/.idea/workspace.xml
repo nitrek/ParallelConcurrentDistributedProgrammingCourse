@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03eb5096-dfeb-4338-bb33-2d9cc6ce85f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/coursera/parallel/ReciprocalArraySum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/coursera/parallel/ReciprocalArraySum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/coursera/parallel/ReciprocalArraySumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/coursera/parallel/ReciprocalArraySumTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="03eb5096-dfeb-4338-bb33-2d9cc6ce85f0" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,7 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="249" />
     <option name="y" value="156" />
     <option name="width" value="938" />
@@ -200,9 +195,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ReciprocalArraySumTest_testParManyTaskTwoMillion - 2021.04.17 at 18h 07m 51s.xml">
-      <configuration name="ReciprocalArraySumTest.testParManyTaskTwoMillion" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ReciprocalArraySumTest_testParManyTaskTwoMillion - 2021.04.17 at 18h 09m 40s.xml">
       <configuration name="ReciprocalArraySumTest.testParManyTaskTwoMillion" configurationId="JUnit" />
     </history-entry>
@@ -230,9 +222,12 @@
     <history-entry file="ReciprocalArraySumTest - 2021.04.17 at 18h 22m 15s.xml">
       <configuration name="ReciprocalArraySumTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ReciprocalArraySumTest - 2021.04.17 at 18h 24m 47s.xml">
+      <configuration name="ReciprocalArraySumTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
