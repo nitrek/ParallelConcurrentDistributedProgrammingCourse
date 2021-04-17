@@ -2,8 +2,6 @@ package edu.coursera.parallel;
 
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
-import static edu.rice.pcdp.PCDP.finish;
-import static edu.rice.pcdp.PCDP.async;
 
 /**
  * Class wrapping methods for implementing reciprocal array sum in parallel.
@@ -89,7 +87,7 @@ public final class ReciprocalArraySum {
      * created to perform reciprocal array sum in parallel.
      */
     private static class ReciprocalArraySumTask extends RecursiveAction {
-        static int THREASHOLD=5;
+        static int THREASHOLD=10000;
         /**
          * Starting index for traversal done by this task.
          */
@@ -160,8 +158,9 @@ public final class ReciprocalArraySum {
         assert input.length % 2 == 0;
         sum1 = 0;
         sum2 = 0;
+        ReciprocalArraySumTask t = new ReciprocalArraySumTask(0,input.length,input);
         ForkJoinPool.commonPool().invoke(t);
-        
+        double sum = t.getValue();
 //        finish(()-> {
 //            async(() -> {
 //                // Compute sum of reciprocals of array elements
@@ -174,8 +173,8 @@ public final class ReciprocalArraySum {
 //                sum2 += 1 / input[i];
 //            }
 //        });
+        //        double sum = sum1+ sum2;
 
-        double sum = sum1+ sum2;
         return sum;
     }
 
@@ -190,14 +189,24 @@ public final class ReciprocalArraySum {
      * @return The sum of the reciprocals of the array input
      */
     protected static double parManyTaskArraySum(final double[] input,
-            final int numTasks) {
+                                                final int numTasks) {
         double sum = 0;
 
         // Compute sum of reciprocals of array elements
-        for (int i = 0; i < input.length; i++) {
-            sum += 1 / input[i];
+        ReciprocalArraySumTask output [] = new ReciprocalArraySumTask[numTasks];
+        for (int i=0; i<numTasks; i++){
+            output[i] = new ReciprocalArraySumTask(getChunkStartInclusive(i, numTasks, input.length), getChunkEndExclusive(i, numTasks, input.length), input);
         }
-
+        for (int i=1; i<numTasks; i++){
+            output[i].fork();
+        }
+        output[0].compute();
+        for (int i=1; i<numTasks; i++){
+            output[i].join();
+        }
+        for(int i=0; i<numTasks; i++){
+            sum += output[i].getValue();
+        }
         return sum;
     }
 }

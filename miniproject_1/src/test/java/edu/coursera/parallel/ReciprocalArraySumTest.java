@@ -136,6 +136,7 @@ public class ReciprocalArraySumTest extends TestCase {
      */
     public void testParManyTaskTwoMillion() {
         final int ncores = getNCores();
+        System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism","5");
         final double minimalExpectedSpeedup = (double)ncores * 0.6;
         final double speedup = parTestHelper(2_000_000, true, ncores);
         final String errMsg = String.format("It was expected that the many-task parallel implementation would run at " +
