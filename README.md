@@ -1,2 +1,2 @@
 # ParallelConcurrentDistributedProgrammingCourse
-[![HitCount](http://hits.dwyl.com/nitrek/aboutme.svg)](http://hits.dwyl.com/nitrek/aboutme)
+[![HitCount](http://hits.dwyl.com/nitrek/ParallelConcurrentDistributedProgrammingCourse.svg)](http://hits.dwyl.com/nitrek/ParallelConcurrentDistributedProgrammingCourse)
