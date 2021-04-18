@@ -114,7 +114,8 @@ public final class StudentAnalytics {
                 .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
                 .entrySet()
                 .stream()
-                .max(Comparator.comparing(Map.Entry::getValue))
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .findFirst()
                 .get()
                 .getKey();
     }
